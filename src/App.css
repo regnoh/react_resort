@@ -1,33 +1,98 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --primaryColor: #af9a7d;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --darkGrey: #cfcfcf;
+  --mainDark: rgba(0, 0, 0, 0.5);
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
+/* globals */
+body {
+  padding-top: 66px;
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: var(--mainSpacing);
+  font-family: "Courier New", Courier, monospace;
+}
+/* button */
+.btn-primary {
+  background: var(--primaryColor);
+  border: 3px solid var(--primaryColor);
+  color: var(--mainBlack);
+  letter-spacing: var(--mainSpacing);
+}
+.btn-primary:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
+/* end button */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.default-bgsection,
+.rooms-bgsection {
+  min-height: calc(100vh - 66px);
+  background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.rooms-bgsection {
+  background-image: url("./images/room-1.jpeg");
+  min-height: 60vh;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.banner {
+  background: var(--mainDark);
+  color: var(--mainWhite);
+}
+.services {
+  background: var(--darkGrey);
+}
+.icon-primary {
+  color: var(--primaryColor);
+  font-size: 2.5rem;
+}
+.room {
+  box-shadow: var(--lightShadow);
+  transform: var(--mainTransition);
+}
+.room:hover {
+  box-shadow: var(--darkShadow);
+}
+.img-container:hover {
+  background: var(--mainDark);
+}
+.img-container:hover img {
+  opacity: 0.3;
+}
+.img-container:hover .price-top {
+  opacity: 0;
+}
+.img-container:hover .featured_link {
+  opacity: 0.8;
+}
+.featured_link {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  cursor: pointer;
+  padding: 0.3em;
 }
